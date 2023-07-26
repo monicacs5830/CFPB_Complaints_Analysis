@@ -45,7 +45,7 @@
 # JUPYTER
 import os
 os.environ["JAVA_HOME"] = "/opt/homebrew/opt/openjdk@11"
-os.environ["SPARK_HOME"] = "/Users/monicachandramurthy/Downloads/spark-3.1.1-bin-hadoop3.2"
+os.environ["SPARK_HOME"] = "spark-3.1.1-bin-hadoop3.2"
 # -
 
 # Importing the necessary libraries for data manipulation and visualization
@@ -76,7 +76,7 @@ import random
 
 # + id="vVCFU5batUB2"
 import findspark
-findspark.init("/Users/monicachandramurthy/Downloads/spark-3.1.1-bin-hadoop3.2")# SPARK_HOME
+findspark.init("spark-3.1.1-bin-hadoop3.2")# SPARK_HOME
 from pyspark.sql import SparkSession
 from google.cloud import bigquery
 
