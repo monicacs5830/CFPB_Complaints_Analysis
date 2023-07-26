@@ -1,0 +1,14 @@
+findspark
+google-cloud-bigquery
+gcsfs
+dash-bootstrap-components
+dash
+dash-core-components
+dash-html-components
+pandas
+seaborn
+matplotlib
+numpy
+plotly
+scipy
+dash-table
