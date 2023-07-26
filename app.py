@@ -45,8 +45,14 @@
 # JUPYTER
 import os
 os.environ["JAVA_HOME"] = "/opt/homebrew/opt/openjdk@11"
-os.environ["SPARK_HOME"] = "spark-3.1.1-bin-hadoop3.2"
+#If setting local path use below
+#os.environ["SPARK_HOME"] = "/spark-3.1.1-bin-hadoop3.2"
 # -
+# Set the SPARK_HOME environment variable
+os.environ["SPARK_HOME"] = os.path.join(os.getcwd(), "spark-3.1.1-bin-hadoop3.2")
+
+# Add Spark's bin directory to the PATH
+os.environ["PATH"] += os.pathsep + os.path.join(os.environ["SPARK_HOME"], 'bin')
 
 # Importing the necessary libraries for data manipulation and visualization
 from pyspark.sql import functions as F
