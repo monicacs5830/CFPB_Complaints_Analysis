@@ -23,7 +23,20 @@ You can download and install Python from the official website: https://www.pytho
 You can download and install Spark from the official website: https://spark.apache.org/downloads.html
 or You can download it [here](http://archive.apache.org/dist/spark/spark-3.1.1/spark-3.1.1-bin-hadoop3.2.tgz) and then extract the files with the following command:
 
-- tar xf spark-3.1.1-bin-hadoop3.2.tgz
+#!/bin/bash
+
+# Download Spark
+wget -q http://archive.apache.org/dist/spark/spark-3.1.1/spark-3.1.1-bin-hadoop3.2.tgz
+
+# Extract Spark
+tar xf spark-3.1.1-bin-hadoop3.2.tgz
+
+# Set the SPARK_HOME environment variable
+export SPARK_HOME=$(pwd)/spark-3.1.1-bin-hadoop3.2
+
+# Add Spark's bin directory to the PATH
+export PATH=$PATH:$SPARK_HOME/bin
+
 
 ### Java
 
