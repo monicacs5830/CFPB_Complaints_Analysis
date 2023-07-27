@@ -109,7 +109,7 @@ from pyspark.sql import SparkSession
 spark = SparkSession.builder \
     .appName("Data 608 - CFPB Project") \
     .config("spark.driver.memory","16G") \
-    .config("spark.jars", "spark-bigquery-with-dependencies_2.12-0.32.0.jar") \
+    .config("spark.jars", "https://github.com/monicacs5830/CFPB_Complaints_Analysis/blob/main/spark-bigquery-with-dependencies_2.12-0.32.0.jar") \
     .getOrCreate()
     #.config("spark.serializer", "org.apache.spark.serializer.KryoSerializer") \
     #.config("spark.kryoserializer.buffer.max", "32G") \
