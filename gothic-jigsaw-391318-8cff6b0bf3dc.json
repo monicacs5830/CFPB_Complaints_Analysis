@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "gothic-jigsaw-391318",
+  "private_key_id": "8cff6b0bf3dc76985ecfeda9a721d53ca99097ad",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC8AXs/pmD74vcc\ncU600pJvH8DAFfGp6G762W4l7VMyTqZfsMGXCgR0zyZZKRm+/mzSOaYS6HQuNHXc\napxY3pNyWaSuivSLeigtryX0IXeFjXWXN1HZNggVHyYTjod1DF1amgpTOqVpRoqZ\nZfcG3P1YxNFBXo1nQFw2L5GcpGW4zOXQrvCDD9UXVBFDiMUt9/yaqxA8QWRSm1UO\nH+jtlBfv/DNrzkye6s6NHV5U/AuydoIxspv4baB1Gkne0zYZPAQwANUr7jwDEx2D\niReefyCqyrESfJbuHIr5HFvTt4gELnUb5eDSBJJ+En/zbFXPv1W/RyIUwl2GdqNR\n81ohMlqlAgMBAAECggEAG1fN0IqGpWuzi9fw3fyYHoBMPMOUQ6VR6rrPucVj6bel\nm9ottaVX05NDHQmMvIntUr/epvZW21d24slAlu48HI/sExSTj2uDR22nQ/PQGcTi\nms0JYuFoWIYQuBxtF/ll5GTt5n/rib2gL8I0JLPkRtJNKsgxIZirMJhHgbQpNTCb\nj+HOzotPuTgAt7sXm0fmbw9ET61+QSVaLQS1tNdY8G0mhvdZqJs4xOt8svANYGBl\nzkGzzF6S7kJgfOuemTEZSbA9e2zhn576CK3RI5k7q86nbHK2qh2ut5TibSg/5fMw\n//tECjBpmgxqXmDgNdxzlFK25pdCjVULphVttrQIEQKBgQDwmiRzQjyuXhU7bIbW\nLG/gWdOvZuzTXk6bXmeIHQPzekeqmVvv+gX+n1aBHHJrw+F1ncCBHn5F63QzNGFD\nj3PpC+ROq3zkRg1PMY+GyuXLhglnHr7oK1phDHUJNy1nRrBaJt24CpKjP3Mq0t2w\n4Pb2REbnuBGOIebj+hj19e55yQKBgQDICaMqv5s2LgTxpTekJFAhwqRkJt0uz28O\nF5Wao6eOKrAClMGoX06ftt8dL5m3xUe7itBNXq+ETo1fS86Uy1nW+von1c1YNVTw\nllVRkGcj/eVQJ1UDRmiYhRXRTQ+jmhq3q7cIfyFdf8DamudXac2IB3ZDpZfeS/To\n5ydONXOH/QKBgQCsbGquxssh0n64xT+kANh0GSugycvydeUzZuYfH1wTgpAVbC38\nvlrJbHrbr/03yXqrhU/NuIKZrPDrOSBzADz6x/Dnh/HKzYEAPe4zlPg1cGsQoXIC\ng/8TCZBd+FLrbjc3hB7ko38OyovIJrGE7tNNDQUbTkgWaalDu5ljuskaMQKBgFCD\nYIMyP7yc5SyFvVF5tC8CcrxE0D2pDB/16iclu6kDEXjYeuHUCodKSZ8rq4lGBEs9\n4f1iIO711v0GPA2zk2Nt/QXPjij0vk1flNORdZIM/SE304XP7wWEe3WUuLi2rA5F\nNRRcZweFBhB2zKpoUWtw5W7w1aGJnPepIi7eYLPZAoGBAIY7he8DjZ26N72yPhNd\ngJKi5iQYHulC0q/GEqWoLroINAva4EfB6F112H2o2VZcsoSGr+cuRNOw9WWDOKg0\nMhj724S9lbOE5kCKkRsrZrdDU8yt2sHQNeF7ylEyeO34fjzAWun6Yv50dGntNIO6\n3PM+fTPnE9KUMNj9st6dPUwI\n-----END PRIVATE KEY-----\n",
+  "client_email": "data-608-group1@gothic-jigsaw-391318.iam.gserviceaccount.com",
+  "client_id": "109484096379567797269",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/data-608-group1%40gothic-jigsaw-391318.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
