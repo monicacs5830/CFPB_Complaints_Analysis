@@ -7,16 +7,16 @@ Original file is located at
     https://colab.research.google.com/drive/1mxVhx-o0WNKgx9GpHahEZzpg7RaroNFB
 """
 
-!pip install gcsfs
-!pip install google-cloud-bigquery
-
-!pip install db-dtypes
-
-!pip install dash-bootstrap-components
-
-!pip install dash
-
-!pip install gcsfs
+#!pip install gcsfs
+#!pip install google-cloud-bigquery
+#
+#!pip install db-dtypes
+#
+#!pip install dash-bootstrap-components
+#
+#!pip install dash
+#
+#!pip install gcsfs
 
 # importing the necessary libraries for data manipulation and visualization
 from google.cloud import bigquery
@@ -493,17 +493,17 @@ fig4f.update_layout(title="Trend of proportion of complaints closed with monetar
 # query_no_of_companies_df = query_no_of_companies_b.to_dataframe()
 # query_no_of_companies_df.head()
 
-"""Insights:
-Based on the data you provided, some initial insights might include:
-
-- BANK OF AMERICA: This bank has been showing a consistent increase in the proportion of monetary complaints, reaching a peak around 2021 and then declining. Non-monetary complaints have been relatively stable.
-- EQUIFAX, INC.: The proportion of monetary complaints is extremely low, almost negligible. Non-monetary complaints peaked around 2019 and then declined sharply.
-- Experian Information Solutions Inc.: This company has a low proportion of monetary complaints, but the non-monetary complaints are relatively high, with significant variations over the years.
-- TRANSUNION INTERMEDIATE HOLDINGS, INC.: There's a noticeable increase in non-monetary complaints in 2022.
-- WELLS FARGO & COMPANY: The company has shown a general trend of decreasing monetary complaints and increasing non-monetary complaints.
-
-These trends over time, show how the companies' responses to complaints have evolved. This information could be valuable for assessing customer satisfaction, regulatory compliance, or other aspects of business performance.
-"""
+#"""Insights:
+#Based on the data you provided, some initial insights might include:
+#
+#- BANK OF AMERICA: This bank has been showing a consistent increase in the proportion of monetary complaints, reaching a peak around 2021 and then declining. Non-monetary complaints have been relatively stable.
+#- EQUIFAX, INC.: The proportion of monetary complaints is extremely low, almost negligible. Non-monetary complaints peaked around 2019 and then declined sharply.
+#- Experian Information Solutions Inc.: This company has a low proportion of monetary complaints, but the non-monetary complaints are relatively high, with significant variations over the years.
+#- TRANSUNION INTERMEDIATE HOLDINGS, INC.: There's a noticeable increase in non-monetary complaints in 2022.
+#- WELLS FARGO & COMPANY: The company has shown a general trend of decreasing monetary complaints and increasing non-monetary complaints.
+#
+#These trends over time, show how the companies' responses to complaints have evolved. This information could be valuable for assessing customer satisfaction, regulatory compliance, or other aspects of business performance.
+#"""
 
 # 4b: analyzing types of company responses over time
 # Query
@@ -721,7 +721,7 @@ Narrative_test_set = pd.read_csv('https://raw.githubusercontent.com/AliHaghighat
 
 # Initializing Dashboard
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.SUPERHERO], suppress_callback_exceptions=True)
-# server=app.server
+server=app.server
 # Button style with padding
 button_style = {'margin': '20px', 'margin-left': '20px', 'margin-right': '20px'}
 # Heading stype with padding
@@ -922,22 +922,6 @@ page_1 = html.Div([
     ),
 ])
 
-second_question_key_findings = """
-Key Findings:
-- "Incorrect information on one's report" was the most common issue with 800,000 complaints, indicating credit report inaccuracies.
-- The second most common issue was related to investigations by credit reporting companies, with over 400,000 complaints, highlighting concerns about their effectiveness.
-- "Improper use of the report" had 300,000 complaints, showing credit reports are sometimes used inappropriately.
-- "Attempting to collect debt not owed" received over 100,000 complaints, indicating collection attempts for debts consumers didn't owe.
-- "Written notification about debt" had the fewest complaints, less than 100,000.
-
-Sub-issues in "incorrect information on the report":
-- "Information belonging to someone else" had over 500,000 complaints.
-- "Incorrect account information" and "incorrect status" had 99,000 and 98,000 complaints, respectively.
-- "Incorrect personal information" received the least complaints with only 50,000 cases.
-
-In summary, the analysis shows the need for addressing credit report inaccuracies and improving practices by credit reporting companies.
-"""
-
 # Layout for page 2
 page_2 = html.Div([
 #     dcc.Link('Go to Home', href='/'),
@@ -962,25 +946,19 @@ page_2 = html.Div([
     Issues and sub-issues refer to the specific problems that consumers encountered with those products or sub-products.
     For example, within the product category "Mortgage", an issue might be "Struggling to pay mortgage".
     A sub-issue could further specify the problem, such as "Trouble during payment process".
-    """, style={'font-size': '18px'}),
+    """),
     html.Br(),
-    html.P("""Based on the graph, an analysis of the distribution of complaints across various issue and subissue categories reveals the following key findings:
-
-Among all the issues, the most common complaint category was "incorrect information on one's report," with a significant count of 800,000 complaints. This suggests that a large number of consumers faced challenges due to inaccuracies in their credit reports.
-
-The second most prevalent issue was related to credit reporting companies' investigations into existing problems, which garnered over 400,000 complaints. Consumers expressed concerns about the effectiveness and thoroughness of these investigations.
-
-Another prominent issue was the "improper use of the report," with more than 300,000 complaints. This indicates that consumers encountered instances where their credit reports were utilized inappropriately.
-
-Furthermore, the issue of "attempting to collect debt not owed" received significant attention, with more than 100,000 complaints. This suggests that a considerable number of consumers faced collection attempts for debts they did not owe.
-
-On the other end of the spectrum, the issue with the least number of complaints was related to "written notification about debt," with less than 100,000 complaints. This issue seems to have affected relatively fewer consumers compared to other problems.
-
-Examining subissues within the category of "incorrect information on the report," complaints primarily revolved around "information belonging to someone else," accounting for over 500,000 complaints. Additionally, there were notable complaints about "incorrect account information" and "incorrect status" on credit reports, with 99,000 and 98,000 complaints, respectively.
-
-Conversely, the subissue of "incorrect personal information" received the least number of complaints, with only 50,000 reported cases.
-
-In summary, the graph's analysis sheds light on the most prevalent issues and subissues faced by consumers, emphasizing the importance of addressing inaccuracies in credit reports and the need for improved practices by credit reporting companies. """),
+    html.P("""Based on the graph, an analysis of the distribution of complaints across various issue and subissue categories reveals the following key findings:"""),
+    html.Ul([
+    html.Li("Among all the issues, the most common complaint category was \"incorrect information on one's report,\" with a significant count of 800,000 complaints. This suggests that a large number of consumers faced challenges due to inaccuracies in their credit reports."),
+    html.Li("The second most prevalent issue was related to credit reporting companies' investigations into existing problems, which garnered over 400,000 complaints. Consumers expressed concerns about the effectiveness and thoroughness of these investigations."),
+    html.Li("Another prominent issue was the \"improper use of the report,\" with more than 300,000 complaints. This indicates that consumers encountered instances where their credit reports were utilized inappropriately."),
+    html.Li("Furthermore, the issue of \"attempting to collect debt not owed\" received significant attention, with more than 100,000 complaints. This suggests that a considerable number of consumers faced collection attempts for debts they did not owe."),
+    html.Li("On the other end of the spectrum, the issue with the least number of complaints was related to \"written notification about debt,\" with less than 100,000 complaints. This issue seems to have affected relatively fewer consumers compared to other problems."),
+    html.Li("Examining subissues within the category of \"incorrect information on the report,\" complaints primarily revolved around \"information belonging to someone else,\" accounting for over 500,000 complaints. Additionally, there were notable complaints about \"incorrect account information\" and \"incorrect status\" on credit reports, with 99,000 and 98,000 complaints, respectively."),
+    html.Li("Conversely, the subissue of \"incorrect personal information\" received the least number of complaints, with only 50,000 reported cases."),
+    html.Li("In summary, the graph's analysis sheds light on the most prevalent issues and subissues faced by consumers, emphasizing the importance of addressing inaccuracies in credit reports and the need for improved practices by credit reporting companies."),
+]),
     html.Br(),
     dbc.Container(
         dbc.Row(
@@ -1003,36 +981,33 @@ page_3 = html.Div([
     html.Br(),
     dcc.Graph(figure=fig3),
     html.Br(),
-    html.P(
-        """
-        According to the graph above, it illustrates the number of company responses to complaints, categorized by different methods of complaint submission. The submission method that received the highest number of company responses was through the web.
-        For all types of submission methods, the most common company response was to close the complaints with an explanation. This indicates that a significant proportion of complaints were resolved by providing consumers with a detailed explanation of the actions taken or the reasons behind the issues raised.
-        The next most frequent company response was to close the complaints with non-monetary relief. This suggests that many complaints were resolved by offering remedies or solutions that did not involve monetary compensation but aimed to address the concerns and provide some form of resolution.
-        Responses categorized as "in progress" or "closed with monetary relief" followed closely after non-monetary relief. This implies that some complaints required ongoing attention or were ultimately resolved with financial compensation to the affected consumers.
-        However, there were notable issues with certain submission methods. Specifically, complaints submitted via referral, phone, postal mail, or fax had low numbers of responses, and web referral or email complaints were not responded to at all by the company. This highlights a concerning lack of responsiveness from companies to complaints submitted through these channels.
-        In summary, the graph reveals that web submissions were the most common method for consumers to submit complaints, and most of these complaints received responses in the form of explanations or non-monetary relief. To reinforce these findings, we performed a chi-squared test of independence.
-        """
-    ),
+    html.Ul([
+    html.Li("According to the graph above, it illustrates the number of company responses to complaints, categorized by different methods of complaint submission. The submission method that received the highest number of company responses was through the web."),
+    html.Li("For all types of submission methods, the most common company response was to close the complaints with an explanation. This indicates that a significant proportion of complaints were resolved by providing consumers with a detailed explanation of the actions taken or the reasons behind the issues raised."),
+    html.Li("However, there were notable issues with certain submission methods. Specifically, complaints submitted via referral, phone, postal mail, fax, web referral or email had low numbers of responses from the company. This highlights a concerning lack of responsiveness from companies to complaints submitted through these channels."),
+    ]),
+    html.P("In summary, although web submissions were the most common method for consumers to submit complaints, there was no conclusive evidence to suggest a significant relationship between the method of submission and the response from the company. To reinforce these findings, we performed a chi-squared test of independence."),
     html.Br(),
-    html.H5("Chi-Square Test of Independence : To determine whether there is a significant relationship between the method used to submit complaints and the response from the company."),
+    html.H5("Chi-Square Analysis of Complaint Submission Method and Company Response"),
     html.Br(),
     html.P("""
     The Chi-squared test of independence is a statistical hypothesis test used to determine if there is a significant association between two categorical variables in a sample.
-In this context, we performed the Chi-squared test to check if there is any significant relationship between the method of complaint submission (such as through the web, phone, mail, etc.) and the response from the company (like closing with explanation, monetary relief, etc.).
+    In this context, we performed the Chi-squared test to check if there is any significant relationship between the method of complaint submission (such as through the web, phone, mail, etc.) and the response from the company (like closing with explanation, monetary relief, etc.).
     """),
     html.Br(),
     html.P("""
     Here are the steps involved:
-"""),
+    """),
+    html.Ul([
+    html.Li("We first construct a contingency table that cross-tabulates the two categorical variables (submission method and company response in this case)."),
+    html.Li("The test then calculates a chi-square statistic, which measures the difference between the observed frequencies of responses in each category and the frequencies we would expect to see if there was no association between the two variables (i.e., if they were independent)."),
+    html.Li("The p-value associated with this statistic is then computed. The p-value is the probability of observing a chi-square statistic as extreme as the one calculated (or more extreme) if the null hypothesis is true."),
+    ]),
     html.Br(),
-    html.P("* 		We first construct a contingency table that cross-tabulates the two categorical variables (submission method and company response in this case)."),
-    html.Br(),
-    html.P("* 		The test then calculates a chi-square statistic, which measures the difference between the observed frequencies of responses in each category and the frequencies we would expect to see if there was no association between the two variables (i.e., if they were independent)."),
-    html.Br(),
-    html.P("* 		The p-value associated with this statistic is then computed. The p-value is the probability of observing a chi-square statistic as extreme as the one calculated (or more extreme) if the null hypothesis is true."),
-    html.P("Null Hypothesis: There is no significant relationship between the two variables"),
-    html.Br(),
-    html.P("Alternative Hypothesis: There is a significant relationship."),
+    html.Ul([
+    html.Li("Null Hypothesis: There is no significant relationship between the two variables"),
+    html.Li("Alternative Hypothesis: There is a significant relationship."),
+        ]),
     html.Br(),
     html.Div(id='chi-square-test'),
     html.Br(),
@@ -1085,11 +1060,11 @@ page_4_layout = html.Div([
         figure=fig4f
     ),
     html.Br(),
-    html.P("Decrease in Monetary Relief: The steady decrease in monetary relief might indicate an industry shift towards resolving complaints through other means, such as offering services, discounts, or other non-cash resolutions."),
-    html.Br(),
-    html.P("Non-Monetary Relief Peak in 2022: The significant increase in non-monetary relief in 2022 could reflect a specific event, regulation change, or trend in consumer behavior. Further investigation might reveal the underlying cause."),
-    html.Br(),
-    html.P("2023 Data Interpretation: If the 2023 data is partial (only up to the current date), this might explain the lower proportions for both monetary and non-monetary relief, and it might not represent a real change in trend."),
+    html.Ul([
+    html.Li("Decrease in Monetary Relief: The steady decrease in monetary relief might indicate an industry shift towards resolving complaints through other means, such as offering services, discounts, or other non-cash resolutions."),
+    html.Li("Non-Monetary Relief Peak in 2022: The significant increase in non-monetary relief in 2022 could reflect a specific event, regulation change, or trend in consumer behavior. Further investigation might reveal the underlying cause."),
+    html.Li("2023 Data Interpretation: If the 2023 data is partial (only up to the current date), this might explain the lower proportions for both monetary and non-monetary relief, and it might not represent a real change in trend."),
+        ]),
     html.Br(),
     html.H4("Analyzing Company Responses Over Time"),
     dcc.Graph(figure=fig4b),
@@ -1113,13 +1088,14 @@ page_4_layout = html.Div([
     html.H4("Analyzing issues over time"),
     dcc.Graph(figure=fig4d),
     html.Br(),
-    html.P("""Over the period from 2012 to 2023, there has been a general upward trend in the number of complaints across various products, including debt
-    collection, money transfer, virtual currency, money service, different types of loans, and vehicle loan or lease. However, it's important to note that for some
-    issues, such as money transfers, the available data only spans from 2013 to 2017, limiting our ability to gain meaningful insights beyond that time frame.
-    In the case of mortgage-related complaints, the numbers have remained relatively stable since 2012, with a slight increase observed in 2013. For other products,
-    the increasing trend suggests a growing concern among consumers regarding these services. To draw more comprehensive conclusions and identify potential patterns,
-    it is essential to have complete data throughout the entire time range. Nonetheless, this information provides valuable insights into the shifting landscape of
-    consumer complaints and highlights the importance of continually monitoring and addressing consumer concerns across different products and industries."""),
+    html.Ul([
+    html.Li("Over the period from 2012 to 2023, there has been a general upward trend in the number of complaints across various products, including debt collection, money transfer, virtual currency, money service, different types of loans, and vehicle loan or lease."),
+    html.Li("However, it's important to note that for some issues, such as money transfers, the available data only spans from 2013 to 2017, limiting our ability to gain meaningful insights beyond that time frame."),
+    html.Li("In the case of mortgage-related complaints, the numbers have remained relatively stable since 2012, with a slight increase observed in 2013."),
+    html.Li("For other products, the increasing trend suggests a growing concern among consumers regarding these services."),
+    html.Li("To draw more comprehensive conclusions and identify potential patterns, it is essential to have complete data throughout the entire time range."),
+    html.Li("Nonetheless, this information provides valuable insights into the shifting landscape of consumer complaints and highlights the importance of continually monitoring and addressing consumer concerns across different products and industries."),
+    ]),
     html.Br(),
     dbc.Container(
         dbc.Row(
@@ -1177,7 +1153,7 @@ page_6_layout = html.Div([
         dbc.Row(
             [
                 html.H3("The Company's Response Prediction Based On the Consumer Narrative", className="text-center"),
-                html.P("The narratives are selected randomly from the test dataset when you click on Generate Prediction button below", className="text-center"),
+                html.P("The initial narrative is selected randomly from the test dataset when you click the Generate Prediction button below. The user can customize these narratives and generate a prediction for the same.", className="text-center"),
                 dbc.Button("Generate Prediction", id="prediction-button", className="mr-1", style={'margin': '20px'}),
             ], className="py-5 text-center"
         ), fluid=True
@@ -1234,24 +1210,31 @@ page_6_layout = html.Div([
     ),
     #dbc.Button("Generate prediction", id="prediction-button", className="mr-1", style={'margin': '20px'}),
     html.Br(),
-    html.P("In our project, we built a machine learning model to predict if a company's response to a complaint is monetary or non-monetary. We also calculated the probability of the response. The final model used the Complement Naive Bayes classifier, achieving a baseline accuracy of 85%."),
+    html.P("In our project, we built a machine learning model to predict if a company's response to a complaint is monetary or non-monetary. We also calculated the probability of the response. The final model used the SVM classifier, achieving a baseline accuracy of 86%."),
     html.Br(),
     html.H5("Here's how we refined our models:"),
-    html.Br(),
-    html.H5("Data Selection: "),
-    html.P("We selected data where the company's response was 'Closed with monetary relief' or 'Closed with non-monetary relief'. These categories were chosen for their practicality and balance, allowing for more accurate predictions. Data without company narratives or with 'Closed with explanation' responses were excluded."),
-    html.Br(),
-    html.H5("Feature Selection: "),
-    html.P("Leveraging our understanding of the domain, we focused on the features that provided rich information, such as the complaint narratives column."),
-    html.Br(),
-    html.H5("Feature Combinations: "),
-    html.P("We tested various combinations of features to find the most predictive set, gaining insights into variable relationships and patterns."),
-    html.Br(),
-    html.H5("Optimization with Pipelines: "),
-    html.P("We optimized the modeling process using pipelines, efficiently fine-tuning our models for alignment with the data."),
-    html.Br(),
-    html.H5("Vectorizer Analysis: "),
-    html.P("We assessed different vectorization techniques, selecting the best methods to translate textual data into numerical form, tailoring them to our specific needs."),
+    html.Ul([
+        html.Li([
+            html.H5("Data Selection: "),
+            html.P("We selected data where the company's response was 'Closed with monetary relief' or 'Closed with non-monetary relief'. These categories were chosen for their practicality and balance, allowing for more accurate predictions. Data without company narratives or with 'Closed with explanation' responses were excluded.")
+        ]),
+        html.Li([
+            html.H5("Feature Selection: "),
+            html.P("Leveraging our understanding of the domain, we focused on the features that provided rich information, such as the complaint narratives column.")
+        ]),
+        html.Li([
+            html.H5("Feature Combinations: "),
+            html.P("We tested various combinations of features to find the most predictive set, gaining insights into variable relationships and patterns.")
+        ]),
+        html.Li([
+            html.H5("Optimization with Pipelines: "),
+            html.P("We optimized the modeling process using pipelines, efficiently fine-tuning our models for alignment with the data.")
+        ]),
+        html.Li([
+            html.H5("Vectorizer Analysis: "),
+            html.P("We assessed different vectorization techniques, selecting the best methods to translate textual data into numerical form, tailoring them to our specific needs.")
+        ]),
+    ]),
     html.Br(),
     html.P("These targeted measures contributed to the refinement and success of our machine learning models, resulting in an approach that accurately and meaningfully interprets complaint narratives."),
     html.Br(),
@@ -1270,7 +1253,7 @@ page_6_layout = html.Div([
 # Layout for Page 7
 page_7_layout = html.Div([
     dbc.Container([
-        html.H3("Summary of Findings / Conclusion with References", className="text-center"),
+        html.H3("Summary of Findings", className="text-center"),
         html.P(
             """In conclusion, our project aimed to gain a comprehensive understanding of customer disputes in financial product complaints and develop a predictive model for consumer complaints. We simultaneously sought to reveal crucial insights into consumer behavior, major pain points, and areas for improvement in financial services."""
         ),
@@ -1287,7 +1270,7 @@ page_7_layout = html.Div([
           html.Li("There is a need for improvement in handling web referral or email complaints due to low response rates."),
           html.Li("The majority of consumer complaints were resolved with detailed explanations. The proportion of monetary to non-monetary relief was minimal but showed a gradual increase for non-monetary relief in recent years. There is no data to support the reasons for this trend."),
           html.Li("Complaints resolved with monetary or non-monetary reliefs had the lowest likelihood of leading to disputes compared to other resolution methods."),
-          html.Li("Our NLP model revealed that when the complaint narratives are well explained, the model predicts the company's response based on user narrative with a baseline accuracy of 86%."),
+          html.Li("Our NLP model revealed that when the complaint narratives are well explained, the model predicts the company's response based on user narrative with a baseline accuracy of 86%.")
       ]),
         html.P(
             """While the project provides valuable insights into consumer complaints using the CFPB dataset, it acknowledges a limitation in potentially skewing the model's perspective towards negative customer experiences. Future improvements can focus on capturing non-complaint interactions and positive feedback, offering a more balanced view of consumer experiences and fostering more accurate analyses."""
@@ -1522,29 +1505,33 @@ def perform_fisher_exact_test(pathname):
     [
         Output('narrative', 'value'),  # Target the value attribute
         Output('prediction', 'children'),
-        Output('prob_max', 'children')
+        Output('prob_max', 'children'),
     ],
-    [Input('prediction-button', 'n_clicks')],
+    [
+        Input('prediction-button', 'n_clicks'),
+    ],
+    [
+        State('narrative', 'value'),  # Get the current value of the narrative textarea
+    ]
 )
-def generate_prediction(n_clicks):
-    if n_clicks is None:  # if the button was never clicked
+def generate_prediction(n_clicks, current_narrative):
+    if n_clicks is None or n_clicks == 0:  # If the button was never clicked
         # Return some default values
         return "No Narrative yet", "No Prediction yet", "No Probability yet"
-    else:  # only generate prediction when button is clicked
-        # Picking a random number
-        random_number=random.randint(0, Narrative_test_set.shape[0] - 1)
-        # Selecting one Narrative
+    elif n_clicks == 1:  # If it's the first click, generate a random narrative
+        random_number = random.randint(0, Narrative_test_set.shape[0] - 1)
         narrative = Narrative_test_set.iloc[random_number, 0]
-        text_to_list = [narrative]
-        # Predicting the response
-        prediction = Complement_NB.predict(text_to_list)
-        prediction = prediction[0]
-        # Storing the probability of the response
-        prob = Complement_NB.predict_proba(text_to_list)
-        prob_max = max(prob[0]) * 100
-        prob_max = f"{prob_max:.2f}"
-        # return data in format for DataTable
-        return narrative, prediction, prob_max
+    else:  # If it's a subsequent click, use the edited narrative
+        narrative = current_narrative
+
+    text_to_list = [narrative]
+    prediction = Complement_NB.predict(text_to_list)
+    prediction = prediction[0]
+    prob = Complement_NB.predict_proba(text_to_list)
+    prob_max = max(prob[0]) * 100
+    prob_max = f"{prob_max:.2f}"
+
+    return narrative, prediction, prob_max
 
 
 # App layout
@@ -1572,7 +1559,7 @@ app.layout = html.Div(
 
 
 if __name__ == '__main__':
-    # app.run_server(host='0.0.0.0', port=8080, debug=True)
-    app.run_server(debug=True)
+    app.run_server(host='0.0.0.0', port=8080, debug=True)
+#    app.run_server(debug=True)
 
 #Launch http://127.0.0.1:8050 on your browser
